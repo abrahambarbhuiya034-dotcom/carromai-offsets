@@ -1,0 +1,49 @@
+{
+  "offsets": {
+    "5.9": {
+      "root_offset": "0x3A12C80",
+      "controller_offset": "0x18",
+      "transform_offset": "0x30",
+      "x_offset": "0x48",
+      "y_offset": "0x4C",
+      "puck_manager_offset": "0x28",
+      "puck_array_offset": "0x10",
+      "puck_array_count_offset": "0x18",
+      "puck_transform_offset": "0x30",
+      "puck_x_offset": "0x48",
+      "puck_y_offset": "0x4C",
+      "puck_in_play_offset": "0x54",
+      "puck_type_offset": "0x58"
+    },
+    "6.0": {
+      "root_offset": "0x3B24C90",
+      "controller_offset": "0x18",
+      "transform_offset": "0x30",
+      "x_offset": "0x48",
+      "y_offset": "0x4C",
+      "puck_manager_offset": "0x28",
+      "puck_array_offset": "0x10",
+      "puck_array_count_offset": "0x18",
+      "puck_transform_offset": "0x30",
+      "puck_x_offset": "0x48",
+      "puck_y_offset": "0x4C",
+      "puck_in_play_offset": "0x54",
+      "puck_type_offset": "0x58"
+    },
+    "6.1": {
+      "root_offset": "0x3C30DA0",
+      "controller_offset": "0x18",
+      "transform_offset": "0x30",
+      "x_offset": "0x48",
+      "y_offset": "0x4C",
+      "puck_manager_offset": "0x28",
+      "puck_array_offset": "0x10",
+      "puck_array_count_offset": "0x18",
+      "puck_transform_offset": "0x30",
+      "puck_x_offset": "0x48",
+      "puck_y_offset": "0x4C",
+      "puck_in_play_offset": "0x54",
+      "puck_type_offset": "0x58"
+    }
+  }
+}
