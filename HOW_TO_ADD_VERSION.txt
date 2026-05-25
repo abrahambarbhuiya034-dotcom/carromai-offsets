@@ -1,0 +1,83 @@
+═══════════════════════════════════════════════════════════
+ CarromAI — How to add a new game version's offsets
+═══════════════════════════════════════════════════════════
+
+WHEN TO DO THIS:
+Carrom Pool gets updated and the old offsets stop working.
+You find the new root_offset using a memory scanner (e.g.
+GameGuardian or Cheat Engine on PC). The other offsets
+(controller, transform, x, y, puck) almost never change
+between versions — usually only root_offset needs updating.
+
+STEPS:
+──────
+
+1. Open offsets.json in this repo
+
+2. Copy an existing version block, e.g.:
+
+   "6.1": {
+     "root_offset": "0x3C30DA0",
+     ...
+   }
+
+3. Paste it below, change the version key and root_offset:
+
+   "6.2": {
+     "root_offset": "0x________",   ← new value you found
+     "controller_offset": "0x18",
+     "transform_offset": "0x30",
+     "x_offset": "0x48",
+     "y_offset": "0x4C",
+     "puck_manager_offset": "0x28",
+     "puck_array_offset": "0x10",
+     "puck_array_count_offset": "0x18",
+     "puck_transform_offset": "0x30",
+     "puck_x_offset": "0x48",
+     "puck_y_offset": "0x4C",
+     "puck_in_play_offset": "0x54",
+     "puck_type_offset": "0x58"
+   }
+
+4. Commit and push to GitHub
+
+5. Done — the app fetches the new offsets automatically
+   on next launch. No APK update needed.
+
+HOW TO FIND root_offset:
+─────────────────────────
+Use GameGuardian on your phone while running CarromAI:
+1. Search for the striker's known X position as a Float
+2. Narrow down to 1-2 addresses
+3. Walk backwards through the pointer chain to find the
+   static root_offset in libunity.so
+4. Use "libunity.so base address" from /proc/self/maps
+   as your reference point
+
+OR use the IDA Pro / Ghidra method on the libunity.so
+extracted from the APK.
+
+═══════════════════════════════════════════════════════════
+ SETUP (first time only)
+═══════════════════════════════════════════════════════════
+
+1. Create a GitHub repo named exactly: carromai-offsets
+   Under account: blackbox
+   Set to Public (required for GitHub Pages)
+
+2. Upload these files to the repo root:
+   - offsets.json
+   - index.html
+   - _config.yml
+
+3. Go to repo Settings → Pages
+   Source: Deploy from branch → main → / (root)
+   Click Save
+
+4. Wait ~60 seconds → your page is live at:
+   https://blackbox.github.io/carromai-offsets/
+
+5. App will fetch from:
+   https://blackbox.github.io/carromai-offsets/offsets.json
+
+═══════════════════════════════════════════════════════════
